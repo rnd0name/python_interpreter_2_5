@@ -1,0 +1,1 @@
+@python %0\..\python\program_language.py %*
