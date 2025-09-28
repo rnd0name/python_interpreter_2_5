@@ -1,0 +1,9 @@
+import draw
+down
+= n100 - 0 100
+= i 0
+goto rnd n100 100 rnd n100 100
+= i + i 1
+jmp i < 10 5
+prt done
+pause
