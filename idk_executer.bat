@@ -1,1 +1,1 @@
-@python %0\..\python\program_language.py %*
+@python %0\..\python\programe_language.py %*
