@@ -1,4 +1,4 @@
-__version__='2.5'
+__version__='1.2.5'
 
 import math
 import random
@@ -8,6 +8,7 @@ def check_if_var(to_check, int_ = 1):
     ret = to_check
     ret = variables[ret] if ret in variables else int(ret) if type(ret) == str and ret.isdigit() and int_ else ret
     return ret
+
 def add(values):
     try :
         return check_if_var(values[0]) + check_if_var(values[1])
@@ -226,7 +227,8 @@ imports = []
 variables = {'pi': math.pi ,
              'e': math.e ,
              '__*None*__' :  '__*None*__' ,
-             '__*packages*__' : []
+             '__*packages*__' : [],
+             '__*vesion*__' : __version__
 }
 
 variables['__*variables*__'] = variables
