@@ -1,2 +1,2 @@
-# python_interpreter_2_5
+# python_interpreter 0.2.5
 A simple interpreter in python
