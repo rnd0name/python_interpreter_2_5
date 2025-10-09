@@ -1,4 +1,4 @@
-__version__='1.2.6'
+__version__='1.3.0'
 
 import math
 import random
@@ -417,4 +417,5 @@ if len(sys.argv) > 1 :
     interpret(sys.argv[1])
 else :
     interpret_line('repl')
+
 
