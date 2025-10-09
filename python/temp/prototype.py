@@ -10,44 +10,60 @@ def check_if_var(to_check, int_ = 1):
     return ret
 
 def add(values):
+    ret = defaultnone
     try :
-        return (check_if_var(values[0]) + check_if_var(values[1]),2)
+        ret = check_if_var(values[0]) + check_if_var(values[1])
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not add \'{values[1]}\' to \'{values[0]}\'')
         target_line = 'EOF'
+    finally :
+        return (ret, 2)
 
 def substract(values):
+    ret = defaultnone
     try :
-        return (check_if_var(values[0]) - check_if_var(values[1]),2)
+        ret = check_if_var(values[0]) - check_if_var(values[1])
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not substract \'{values[1]}\' to \'{values[0]}\'')
         target_line = 'EOF'
+    finally :
+        return (ret, 2)
 
 def mult(values):
+    ret = defaultnone
     try :
-        return (check_if_var(values[0]) * check_if_var(values[1]),2)
+        ret = check_if_var(values[0]) * check_if_var(values[1])
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not multiply \'{values[0]}\' by \'{values[1]}\'')
         target_line = 'EOF'
+    finally :
+        return (ret, 2)
 
 def div(values):
+    ret = defaultnone
     try :
-        return (check_if_var(values[0]) / check_if_var(values[1]),2)
+        ret = check_if_var(values[0]) / check_if_var(values[1])
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not divid \'{values[0]}\' by \'{values[1]}\'')
         target_line = 'EOF'
+    finally :
+        return (ret, 2)
 
 def exposant(values):
+    ret = defaultnone
     try :
-        return (check_if_var(values[0])**check_if_var(values[1]),2)
+        ret = check_if_var(values[0])**check_if_var(values[1])
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not raise \'{values[0]}\' to the power of \'{values[1]}\'')
         target_line = 'EOF'
+    finally :
+        return (ret, 2)
+        
 
 def prt(args):
     global defaultnone
@@ -88,84 +104,111 @@ def lprt(args) :
     return (defaultnone,len(args))
 
 def sqrt(values):
+    ret = defaultnone
     try :
-        value = values
-        return (math.sqrt(check_if_var(value)),1)
+        value = values[0]
+        ret = math.sqrt(check_if_var(value))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the square root of {value}')
         target_line = 'EOF'
+    finally :
+        return (ret,1)
 
 def c_abs(values):
+    ret = defaultnone
     try :
-        value = values
-        return (abs(check_if_var(value)),1)
+        value = values[0]
+        ret = abs(check_if_var(value))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the absolute value of {value}')
         target_line = 'EOF'
+    finally :
+        return (ret, 1)
 
 def rad(values):
+    ret = defaultnone
     try :
-        value = values
-        return (math.radians(check_if_var(value)),1)
+        value = values[0]
+        ret = math.radians(check_if_var(value))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the value in radiant of {value}')
         target_line = 'EOF'
+    finally :
+        return (ret, 1)
 
 def deg(values):
+    ret = defaultnone
     try :
-        value = values
-        return (math.degrees(check_if_var(value)),1)
+        value = values[0]
+        ret = math.degrees(check_if_var(value))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the value in degree of {value}')
         target_line = 'EOF'
+    finally :
+        return (ret, 1)
 
 def radsin(values):
+    ret = defaultnone
     try :
-        value = values
-        return (math.sin(check_if_var(value)),1)
+        value = values[0]
+        ret = math.sin(check_if_var(value))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the sin of {value} radiant')
         target_line = 'EOF'
+    finally :
+        return (ret, 1)
 
 def degsin(values):
+    ret = defaultnone
     try :
-        value = values
-        return (math.sin(math.radians(check_if_var(value))),1)
+        value = values[0]
+        ret = math.sin(math.radians(check_if_var(value)))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the sin of {value} degree')
         target_line = 'EOF'
+    finally :
+        return (ret, 1)
 
 def radcos(values):
+    ret = defaultnone
     try :
-        value = values
-        return (math.cos(check_if_var(value)),1)
+        value = values[0]
+        ret = math.cos(check_if_var(value))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the cosin of {value} radiant')
         target_line = 'EOF'
+    finally :
+        return (ret, 1)
 
 def degcos(values):
+    ret = defaulnone
     try :
-        value = values
-        return (math.cos(math.radians(check_if_var(value))),1)
+        value = values[0]
+        ret = math.cos(math.radians(check_if_var(value)))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find the cosin of {value} degree')
         target_line = 'EOF'
+    finally :
+        return (ret, 1)
 
 def rnd(values):
+    ret = defaultnone
     try :
-        return (random.randint(check_if_var(values[0]), check_if_var(values[1])),2)
+        ret = random.randint(check_if_var(values[0]), check_if_var(values[1]))
     except TypeError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find a random integer between {values[0]} and {values[1]}')
         target_line = 'EOF'
+    finally :
+        return (ret,2)
 
 def rnd01():
     return (random.randint(0,100000)/100000,0)
@@ -179,15 +222,17 @@ def c_import(package) :
         globals().update({name: getattr(m, name) for name in m.__all__})
         variables['__*packages*__'].append(package)
         del m
-        return(defaultnone,1)
     except ModuleNotFoundError :
         global target_line, current_line
         print(f'Error on line {current_line} : can not find a module named : {package}')
         target_line = 'EOF'
+    finally :
+        return(defaultnone,1)
 
 def run(file) :
+    file = file
     global run_var
-    run_var = file
+    run_var = file[0]
     return (defaultnone,1)
 
 def repl() :
@@ -206,7 +251,7 @@ def pause() :
     return(defaultnone,0)
 
 def var(values) :
-    var_name,var_value = values
+    var_name,var_value = values[0:2]
     var_value = check_if_var(var_value, 1)
     var_value = var_value.strip() if type(var_value) == str else var_value
     variables[var_name]=var_value
@@ -218,7 +263,7 @@ def del_(values) :
     return (defaultnone,1)
 
 def jmp(values):
-    var1, operator, var2, line = values
+    var1, operator, var2, line = values[0:4]
     global target_line
     var1 = check_if_var(var1)
     var2 = check_if_var(var2)
@@ -355,7 +400,10 @@ def interpret_expression_prototype(expr, expr_idx, line) :
         ret = command_all[expr](line[expr_idx+1::])
         del line[expr_idx:1+ret[1]]
         if ret[0] != defaultnone :
-            line.insert(expr_idx, ret[0]
+            line.insert(expr_idx, ret[0])
+    except IndexError :
+        print(f'Expresion {expresion} missing argument(s).')
+    return line
 
 def evaluate_condition(var1, operator, var2):
     if isinstance(var1, str):
